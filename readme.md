@@ -2,7 +2,7 @@
 
 ## List of Games
 
-For a complete list of games, please visit the [List of Games](https://github.com/Xordas/games-repo/games.md).
+For a complete list of games, please visit the [List of Games](https://github.com/Xordas/games-repo/blob/main/games.md).
 
 ## Disclaimer
 
