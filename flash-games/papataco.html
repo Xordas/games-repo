@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SWF Emulator</title>
+	<style>
+		/*css*/
+		html, body, #container, ruffle-player {
+			height: 100vh;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+
+	<script>
+		window.RufflePlayer = window.RufflePlayer || {};
+		window.addEventListener("load", (event) => {
+			const ruffle = window.RufflePlayer.newest();
+			const player = ruffle.createPlayer();
+			const container = document.getElementById("container");
+			container.appendChild(player);
+			player.load("../flash-files/papataco.swf");
+		});
+	</script>
+	<script src="../ruffle/ruffle.js"></script>
+</body>
+</html>
