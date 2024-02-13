@@ -10,6 +10,6 @@ All games in this repository are provided as is. I do not claim ownership of any
 
 ## License
 
-This repository is licensed under the [MIT license](LICENSE.md)
+This repository is licensed under the [MIT license](LICENSE.md). You are free to use, copy, modify, and distribute the code in this repository, but you must provide attribution back to this repository if you do so. Additionally, the "Buy Me a Coffee" link and Google Analytics code must remain in place on all pages where they currently exist.
 
 Support me on [Buy me a coffee!](https://www.buymeacoffee.com/Xordas)
