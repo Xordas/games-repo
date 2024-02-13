@@ -19,7 +19,7 @@ Here are all the games available in this repo:
 
 - [Learn to Fly](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/ltf.html)
 - [Learn to Fly 2](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/ltf2.html)
-- [Learn to Fly 3](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/ltf3.html)A
+- [Learn to Fly 3](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/ltf3.html)
 
 ## Papa's Cooking Games
 
