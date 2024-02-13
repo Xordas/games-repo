@@ -33,4 +33,6 @@ Here are all the games available in this repo:
 - [Papa's Tacoria](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/papataco.html)
 - [Papa's Wingeria](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/papawing.html)
 
+## Other
 
+- [2048](https://xordas-game-repo.worksheetsforteachers.xyz/flash-games/2048.html)
