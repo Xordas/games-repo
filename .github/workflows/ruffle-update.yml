@@ -1,50 +1,50 @@
-name: Update Ruffle
+# name: Update Ruffle
+# uncomment: ctrl + /
+# on:
+#   schedule:
+#     - cron: '0 0 * * *' # run everyday at midnight
+#   workflow_dispatch: # allows manual trigger
 
-on:
-  schedule:
-    - cron: '0 0 * * *' # run everyday at midnight
-  workflow_dispatch: # allows manual trigger
+# jobs:
+#   update:
+#     runs-on: ubuntu-latest
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout repo
+#       uses: actions/checkout@v4
 
-    steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-
-    - name: Setup Node.js environment
-      run: |
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # load nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # load nvm bash_completion
-        nvm install 20
+#     - name: Setup Node.js environment
+#       run: |
+#         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+#         export NVM_DIR="$HOME/.nvm"
+#         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # load nvm
+#         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # load nvm bash_completion
+#         nvm install 20
       
-    - name: Download Ruffle
-      run: |
-        curl -fLo ruffle.zip https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip
-        unzip ruffle.zip -d ruffle_new
+#     - name: Download Ruffle
+#       run: |
+#         curl -fLo ruffle.zip https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip
+#         unzip ruffle.zip -d ruffle_new
 
-    - name: Backup existing Ruffle
-      run: |
-        mv ruffle ruffle_backup || true
+#     - name: Backup existing Ruffle
+#       run: |
+#         mv ruffle ruffle_backup || true
 
-    - name: Copy new Ruffle files
-      run: |
-        cp -r ruffle_new/. ruffle/
-        if [ -f "ruffle_new/loader.js" ]; then
-          cp -n ruffle_new/loader.js ruffle/
-        fi
+#     - name: Copy new Ruffle files
+#       run: |
+#         cp -r ruffle_new/. ruffle/
+#         if [ -f "ruffle_new/loader.js" ]; then
+#           cp -n ruffle_new/loader.js ruffle/
+#         fi
 
-    - name: Remove old Ruffle
-      run: |
-        rm -rf ruffle_backup
+#     - name: Remove old Ruffle
+#       run: |
+#         rm -rf ruffle_backup
 
-    - name: Commit and push if it changed
-      run: |
-        git config user.name "Ruffle Updater"
-        git config user.email "xordas@xordas.me"
-        git add -A
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update Ruffle"
-        git push
+#     - name: Commit and push if it changed
+#       run: |
+#         git config user.name "Ruffle Updater"
+#         git config user.email "xordas@xordas.me"
+#         git add -A
+#         git diff --quiet && git diff --staged --quiet || git commit -m "Update Ruffle"
+#         git push
