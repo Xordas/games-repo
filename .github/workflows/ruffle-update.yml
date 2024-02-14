@@ -3,6 +3,7 @@ name: Update Ruffle
 on:
   schedule:
     - cron: '0 0 * * *' # run everyday at midnight
+  workflow_dispatch: # allows manual trigger
 
 jobs:
   update:
