@@ -16,22 +16,29 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2
       with:
-        node-version: '20'
+        node-version: '20' # update to Node 20
 
     - name: Download Ruffle
       run: |
         Invoke-WebRequest -Uri https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip -OutFile ruffle.zip
         Expand-Archive -Path ruffle.zip -DestinationPath ruffle_new
 
-    - name: Update Ruffle
-      run: | # exclude loader.js (custom code)
-        Get-ChildItem -Path ruffle -File | Where-Object { $_.Name -ne 'loader.js' } | Remove-Item 
-        Copy-Item -Path ruffle_new/* -Destination ruffle/ -Recurse -Force
+    - name: Backup existing Ruffle
+      run: |
+        mv ruffle ruffle_backup || true
+
+    - name: Copy new Ruffle files
+      run: |
+        robocopy ruffle_new ruffle /E /MT:32
+
+    - name: Remove old Ruffle
+      run: |
+        rm -rf ruffle_backup
 
     - name: Commit and push if it changed
       run: |
-        git config user.name "Ruffle updater"
-        git config user.email "ruffle-updater@localhost"
+        git config user.name "Ruffle Updater"
+        git config user.email "your-email@example.com" # Use a valid email
         git add -A
         git diff --quiet && git diff --staged --quiet || git commit -m "Update Ruffle"
         git push
