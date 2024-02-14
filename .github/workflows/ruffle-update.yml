@@ -23,7 +23,7 @@ jobs:
       
     - name: Download Ruffle
       run: |
-        curl -o ruffle.zip -L https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip
+        curl -fLo ruffle.zip https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip
         unzip ruffle.zip -d ruffle_new
 
     - name: Backup existing Ruffle
