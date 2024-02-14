@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js environment
       run: |
@@ -33,6 +33,9 @@ jobs:
     - name: Copy new Ruffle files
       run: |
         cp -r ruffle_new/. ruffle/
+        if [ -f "ruffle_new/loader.js" ]; then
+          cp -n ruffle_new/loader.js ruffle/
+        fi
 
     - name: Remove old Ruffle
       run: |
