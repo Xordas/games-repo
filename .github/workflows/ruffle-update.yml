@@ -14,14 +14,17 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Node.js environment
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20' # update to Node 20
-
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        nvm install 20
+      
     - name: Download Ruffle
       run: |
-        Invoke-WebRequest -Uri https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip -OutFile ruffle.zip
-        Expand-Archive -Path ruffle.zip -DestinationPath ruffle_new
+        curl -o ruffle.zip -L https://github.com/ruffle-rs/ruffle/releases/latest/download/ruffle_web_latest.zip
+        unzip ruffle.zip -d ruffle_new
 
     - name: Backup existing Ruffle
       run: |
@@ -29,7 +32,7 @@ jobs:
 
     - name: Copy new Ruffle files
       run: |
-        robocopy ruffle_new ruffle /E /MT:32
+        cp -r ruffle_new/. ruffle/
 
     - name: Remove old Ruffle
       run: |
@@ -38,7 +41,7 @@ jobs:
     - name: Commit and push if it changed
       run: |
         git config user.name "Ruffle Updater"
-        git config user.email "your-email@example.com" # Use a valid email
+        git config user.email "xordas@xordas.me"
         git add -A
         git diff --quiet && git diff --staged --quiet || git commit -m "Update Ruffle"
         git push
