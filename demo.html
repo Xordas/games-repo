@@ -14,105 +14,169 @@
         gtag('config', 'G-X42W1N0Z9Q');
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #131b24;
-            margin: 0;
-            padding: 0;
-            color: #ecf0f1;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #131b24;
+        margin: 0;
+        padding: 0;
+        color: #ecf0f1;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1f2c38;
-            transition: background-color 0.3s ease;
-            border-radius: 10px;
-        }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #1f2c38;
+        transition: background-color 0.3s ease;
+        border-radius: 10px;
+    }
 
-        h1 {
-            text-align: center;
-            color: #ecf0f1;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+    h1 {
+        text-align: center;
+        color: #ecf0f1;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
 
-        h2 {
-            font-weight: 400;
-            margin-bottom: 20px;
-            color: #ecf0f1;
-        }
+    h2 {
+        font-weight: 400;
+        margin-bottom: 20px;
+        color: #ecf0f1;
+    }
 
-        #bmc-widget {
-            position: fixed;
-            bottom: 18px;
-            right: 18px;
-        }
+    #bmc-widget {
+        position: fixed;
+        bottom: 18px;
+        right: 18px;
+    }
 
-        .demo-bar {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 10px;
-            text-align: center;
-        }
+    .demo-bar {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 10px;
+        text-align: center;
+    }
 
-        .demo-bar input[type="file"] {
-            display: none;
-        }
+    .demo-bar input[type="file"] {
+        display: none;
+    }
 
-        .demo-bar label {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #34495e;
-            border: 1px solid #7f8c8d;
-            color: #ecf0f1;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+    .demo-bar label {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #34495e;
+        border: 1px solid #7f8c8d;
+        color: #ecf0f1;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-        .demo-bar label:hover {
-            background-color: #2c3e50;
-            transform: scale(1.02);
-        }
+    .demo-bar label:hover {
+        background-color: #2c3e50;
+        transform: scale(1.02);
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-        }
+    .navbar {
+    display: flex;
+    justify-content: center; 
+    padding: 10px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+    .navbar > * {
+        margin: 0 10px; 
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1;
-        }
+        .navbar input[type="file"] {
+        display: none; 
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .navbar label {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #34495e;
+        border: 1px solid #7f8c8d;
+        color: #ecf0f1;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar label:hover {
+        background-color: #2c3e50;
+        transform: scale(1.02);
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+
+
+    .dropdown-button .arrow {
+        margin-left: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-button {
+        background-color: #2c3e50;
+        border: none;
+        color: #ecf0f1;
+        cursor: pointer;
+        padding: 8px 16px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown-button:hover {
+        background-color: #34495e;
+        transform: scale(1.02);
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1f2c38;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+    }
+
+    .dropdown-content a {
+        color: #ecf0f1;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #34495e;
+        color: #ecf0f1;
+    }
     </style>
 </head>
 <body>
@@ -121,8 +185,8 @@
         <input type="file" id="swf-file" accept=".swf">
         <label for="swf-file">Load SWF File</label>
         <div class="dropdown">
-            <label id="preset-demo">Use Preset Demo</label>
-            <div class="dropdown-content">
+            <button id="preset-demo" class="dropdown-button">Use Preset Demo <span class="arrow">&#9660;</span></button>
+            <div id="dropdown-content" class="dropdown-content">
                 <a href="#" data-url="/flash-files/dl.swf">Duck life</a>
                 <a href="#" data-url="/flash-files/ltf.swf">Learn to fly</a>
                 <a href="#" data-url="/flash-files/papapizza.swf">Papas pizzeria</a>
@@ -135,6 +199,16 @@
     </div>
 
     <script src="/ruffle/ruffle.js"></script>
+    <script>
+        document.getElementById('preset-demo').addEventListener('click', function() {
+            var dropdownContent = document.getElementById('dropdown-content');
+            if (dropdownContent.style.display === "none") {
+                dropdownContent.style.display = "block";
+            } else {
+                dropdownContent.style.display = "none";
+            }
+        });
+    </script>
 
     <!--preset flash-->
     <script>
