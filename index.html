@@ -84,6 +84,7 @@
             bottom: 18px;
             right: 18px;
         }
+
     </style>
 </head>
 <body>
@@ -92,11 +93,19 @@
         <h2>Click on the button below to go to the repo, where you can find the complete list of games.</h2>
         <ul class="repo-link">
             <li><a href="https://github.com/Xordas/games-repo"><center>Github repo</center></a></li>
+            <li><a href=/demo><center>Try a demo</center></a></li>
         </ul>
     </div>
 
     <div id="bmc-widget">
         <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Xordas" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     </div>
+
+    <div class="demo-bar">
+        <input type="file" id="swf-file" accept=".swf">
+        <label for="swf-file">Load SWF File</label>
+        <label id="preset-demo">Use Preset Demo</label>
+    </div>
+
 </body>
 </html>
